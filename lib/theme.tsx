@@ -7,22 +7,18 @@ const PALETTE = {
   teal: "#3C6E71",
   deepTeal: "#284B63",
   softTeal: "#6FA3A9",
-
   charcoal: "#353535",
   slate: "#1F2D36",
   gray: "#D9D9D9",
   white: "#FFFFFF",
   offWhite: "#F5F7F7",
-
   textStrong: "#111111",
   subtextLight: "#4B5A66",
   borderLight: "#E6E6E6",
-
   surfaceDark: "#1A242C",
   textOnDark: "#F3F5F7",
   subtextDark: "#C6D0D8",
   borderDark: "#2E3942",
-
   tabInactiveLight: "#7C8A97",
   tabInactiveDark: "#7D8B97",
 };

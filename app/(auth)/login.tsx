@@ -18,8 +18,8 @@ export default function Login() {
 
   const validate = () => {
     const e: typeof errs = {};
-    if (!emailRe.test(email)) e.email = "Enter a valid email (e.g. you@example.com).";
-    if (!pwdRe.test(pwd)) e.pwd = "Min 8 chars, include letters and numbers.";
+    if (!emailRe.test(email)) e.email = "Geçerli bir e-posta girin (örn. ornek@ornek.com)";
+    if (!pwdRe.test(pwd)) e.pwd = "En az 8 karakter; harf ve rakam içermeli.";
     setErrs(e);
     return Object.keys(e).length === 0;
   };
@@ -29,35 +29,35 @@ export default function Login() {
       <View style={{ padding: 16 }}>
         <Card>
           <Text style={{ fontSize: 20, fontWeight: "700", marginBottom: 12 }}>
-            Welcome back
+            Hoş geldin
           </Text>
           <View style={{ gap: 12 }}>
             <Field
-              label="Email"
+              label="E-posta"
               keyboardType="email-address"
               value={email}
               onChangeText={(t) => {
                 setEmail(t);
                 if (errs.email) setErrs((p) => ({ ...p, email: undefined }));
               }}
-              placeholder="you@example.com"
+              placeholder="ornek@ornek.com"
             />
             {errs.email ? <Label style={{ color: "#e53935" }}>{errs.email}</Label> : null}
 
             <Field
-              label="Password"
+              label="Şifre"
               value={pwd}
               onChangeText={(t) => {
                 setPwd(t);
                 if (errs.pwd) setErrs((p) => ({ ...p, pwd: undefined }));
               }}
               placeholder="••••••••"
-              secureTextEntry   // ✅ works now
+              secureTextEntry
             />
             {errs.pwd ? <Label style={{ color: "#e53935" }}>{errs.pwd}</Label> : null}
 
             <Button
-              title="Login"
+              title="Giriş Yap"
               loading={loading}
               onPress={async () => {
                 if (!validate()) return;

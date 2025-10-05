@@ -5,12 +5,13 @@ import { Ionicons } from "@expo/vector-icons";
 import { useTheme } from "../lib/theme";
 
 type FieldProps = {
-  label: string;
+  label?: string;
   value?: string;
   onChangeText?: (t: string) => void;
   placeholder?: string;
   keyboardType?: any;
   secureTextEntry?: boolean;
+  showLabel?: boolean;
 };
 
 export default function Field({
@@ -20,13 +21,18 @@ export default function Field({
   placeholder,
   keyboardType,
   secureTextEntry,
+  showLabel = true,
 }: FieldProps) {
   const [hidden, setHidden] = useState(secureTextEntry ?? false);
   const { colors } = useTheme();
 
   return (
     <View style={{ gap: 6 }}>
-      <Text style={{ fontSize: 14, fontWeight: "700", color: colors.text }}>{label}</Text>
+      {showLabel && !!label && (
+        <Text style={{ fontSize: 14, fontWeight: "700", color: colors.text }}>
+          {label}
+        </Text>
+      )}
       <View
         style={{
           flexDirection: "row",
@@ -40,11 +46,7 @@ export default function Field({
         }}
       >
         <TextInput
-          style={{
-            flex: 1,
-            fontSize: 16,
-            color: colors.text,
-          }}
+          style={{ flex: 1, fontSize: 16, color: colors.text }}
           placeholderTextColor={colors.subtext}
           value={value}
           onChangeText={onChangeText}
@@ -52,9 +54,8 @@ export default function Field({
           keyboardType={keyboardType}
           secureTextEntry={hidden}
         />
-
         {secureTextEntry && (
-          <Pressable onPress={() => setHidden((h) => !h)} style={{ paddingLeft: 8 }}>
+          <Pressable onPress={() => setHidden(h => !h)} style={{ paddingLeft: 8 }}>
             <Ionicons
               name={hidden ? "eye-off-outline" : "eye-outline"}
               size={20}

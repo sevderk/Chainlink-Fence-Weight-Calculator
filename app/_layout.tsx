@@ -17,9 +17,9 @@ function WithTheme() {
         }}
       >
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="settings" options={{ title: "Settings" }} />
-        <Stack.Screen name="(auth)/login" options={{ title: "Login" }} />
-        <Stack.Screen name="(auth)/signup" options={{ title: "Sign Up" }} />
+        <Stack.Screen name="settings" options={{ title: "Ayarlar" }} />
+        <Stack.Screen name="(auth)/login" options={{ title: "Giriş Yap" }} />
+        <Stack.Screen name="(auth)/signup" options={{ title: "Kayıt Ol" }} />
       </Stack>
     </>
   );

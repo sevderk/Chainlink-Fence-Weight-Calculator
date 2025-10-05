@@ -15,10 +15,10 @@ export default function ProjectScreen() {
       <View style={{ padding: 16, gap: 12 }}>
         <Card>
           <View style={{ gap: 12 }}>
-            <Field label="Total m² of Project" value={total} onChangeText={setTotal} placeholder="e.g. 450" />
-            <Field label="m² Weight (kg)" value={m2Weight} onChangeText={setM2Weight} placeholder="from m² tab" />
+            <Field label="Toplam m²" value={total} onChangeText={setTotal} placeholder="örn. 450" />
+            <Field label="m² Ağırlık (kg)" value={m2Weight} onChangeText={setM2Weight} placeholder="m² sekmesinden" />
             <Button
-              title="Calculate"
+              title="Hesapla"
               onPress={() => {
                 const val = calcProjectWeight({
                   totalM2: parseFloat(total),
@@ -31,7 +31,7 @@ export default function ProjectScreen() {
         </Card>
 
         <Card>
-          <Label>Project Weight</Label>
+          <Label>Proje Ağırlığı</Label>
           <Text style={{ fontSize: 24, fontWeight: "700" }}>{result ?? "-"} kg</Text>
         </Card>
       </View>

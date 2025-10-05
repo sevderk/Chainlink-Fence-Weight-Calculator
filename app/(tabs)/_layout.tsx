@@ -35,7 +35,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="m2"
         options={{
-          title: "m² Weight",
+          title: "m² Ağırlık",
           tabBarIcon: ({ color, size }: TabIconProps) => (
             <Ionicons name="grid-outline" color={color} size={size} />
           ),
@@ -44,7 +44,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="roll"
         options={{
-          title: "Roll Weight",
+          title: "Rulo Ağırlığı",
           tabBarIcon: ({ color, size }: TabIconProps) => (
             <Ionicons name="reorder-four-outline" color={color} size={size} />
           ),
@@ -53,7 +53,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="project"
         options={{
-          title: "Project Weight",
+          title: "Proje Ağırlığı",
           tabBarIcon: ({ color, size }: TabIconProps) => (
             <Ionicons name="briefcase-outline" color={color} size={size} />
           ),
@@ -62,7 +62,7 @@ export default function TabsLayout() {
       <Tabs.Screen
         name="info"
         options={{
-          title: "Info",
+          title: "Bilgi",
           tabBarIcon: ({ color, size }: TabIconProps) => (
             <Ionicons name="information-circle-outline" color={color} size={size} />
           ),

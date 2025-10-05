@@ -9,18 +9,11 @@ export function calcM2Weight(params: {
   return coef * base;
 }
 
-export function calcRollWeight(params: {
-  lengthM: number;
-  heightM: number;
-  m2Weight: number;
-}) {
+export function calcRollWeight(params: { lengthM: number; heightM: number; m2Weight: number }) {
   const area = (params.lengthM || 0) * (params.heightM || 0);
   return area * (params.m2Weight || 0);
 }
 
-export function calcProjectWeight(params: {
-  totalM2: number;
-  m2Weight: number;
-}) {
+export function calcProjectWeight(params: { totalM2: number; m2Weight: number }) {
   return (params.totalM2 || 0) * (params.m2Weight || 0);
 }

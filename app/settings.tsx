@@ -6,33 +6,38 @@ import { clearToken } from "../lib/storage";
 import { useRouter } from "expo-router";
 
 export default function Settings() {
-  const { mode, setMode, resolved, colors } = useTheme();
+  const { mode, setMode, colors } = useTheme();
   const router = useRouter();
 
   return (
     <ScreenContainer>
       <View style={{ padding: 16, gap: 12 }}>
-        {/* Appearance */}
         <Card>
           <Text style={{ fontSize: 18, fontWeight: "700", marginBottom: 8 }}>
-            Appearance
+            Görünüm
           </Text>
-          <Label>Theme preference</Label>
+          <Label>Tema tercihi</Label>
+
           <View style={{ flexDirection: "row", gap: 8, marginTop: 12 }}>
-            <Button title="Light" onPress={() => setMode("light")} />
-            <Button title="Dark" onPress={() => setMode("dark")} />
+            <Button
+              title="Açık"
+              variant="outline"
+              selected={mode === "light"}
+              onPress={() => setMode("light")}
+            />
+            <Button
+              title="Koyu"
+              variant="outline"
+              selected={mode === "dark"}
+              onPress={() => setMode("dark")}
+            />
           </View>
-          <Label style={{ marginTop: 8 }}>
-            Selected: {mode} — Active: {resolved}
-          </Label>
         </Card>
 
-        {/* Account */}
         <Card>
           <Text style={{ fontSize: 18, fontWeight: "700", marginBottom: 8 }}>
-            Account
+            Hesap
           </Text>
-
           <Pressable
             onPress={async () => {
               await clearToken();
@@ -50,7 +55,7 @@ export default function Settings() {
             })}
           >
             <Text style={{ color: colors.text, fontWeight: "600" }}>
-              Log out
+              Çıkış Yap
             </Text>
           </Pressable>
         </Card>

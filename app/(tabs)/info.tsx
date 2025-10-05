@@ -6,12 +6,14 @@ export default function InfoScreen() {
     <ScreenContainer>
       <View style={{ padding: 16, gap: 12 }}>
         <Card>
-          <Text style={{ fontSize: 18, fontWeight: "700", marginBottom: 8 }}>Chainlink Fence Weight Calculator</Text>
+          <Text style={{ fontSize: 18, fontWeight: "700", marginBottom: 8 }}>
+            Zincirli Tel Çit Ağırlık Hesaplayıcı
+          </Text>
           <Label>
-            • Calculate m² weight of the weaved wire.{"\n"}
-            • Calculate weight of a roll.{"\n"}
-            • Calculate total project (tender) weight.{"\n\n"}
-            Results may vary by wire type & knitting settings.
+            • Örülü telin m² ağırlığını hesaplayın.{"\n"}
+            • Rulo ağırlığını hesaplayın.{"\n"}
+            • Proje (ihale) toplam ağırlığını hesaplayın.{"\n\n"}
+            Sonuçlar tel tipi ve örme ayarlarına göre değişiklik gösterebilir.
           </Label>
         </Card>
       </View>
